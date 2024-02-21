@@ -1,0 +1,28 @@
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .city {
+    font-weight: 700;
+    font-size: 0.9em;
+    letter-spacing: 1.2px;
+    color: white;
+  }
+  
+  .weather {
+    font-weight: 500;
+    font-size: 0.7em;
+    letter-spacing: 1.2px;
+    color: rgb(197, 197, 197);
+  }
+  .date {
+      font-weight: 700;
+      font-size: 1em;
+      letter-spacing: 1.2px;
+      color: white;
+    }
+  .temp {
+    font-size: 1.8em;
+    color: white;
+  }

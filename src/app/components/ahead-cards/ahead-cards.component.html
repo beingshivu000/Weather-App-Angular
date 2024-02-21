@@ -1,0 +1,18 @@
+<div class="cards">
+    <div class="cards-container" *ngFor="let item of fourDaysData; let i = index">
+        <div class="cards-box">
+            <!-- *ngIf="i > 0" -->
+          <div class="weath-card">
+            <p class="date">{{ item.dt_txt.split(" ") | date }}</p>
+            <img
+            src="https://openweathermap.org/img/wn/{{
+              item.weather[0].icon
+            }}@2x.png"
+            alt=""
+          />
+            <p>{{ (item.main.temp - 273.15).toFixed(2) }}</p>
+          </div>
+        </div>
+      </div>
+
+</div>

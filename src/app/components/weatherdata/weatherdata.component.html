@@ -1,0 +1,73 @@
+<div class="card-container">
+  <div class="wrapper">
+
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+      <div class="input-field">
+        <input type="text" name="" placeholder="City name..." formControlName="cityName" />
+        <div class="btn">
+          <button type="submit" class="search">
+            <lucide-angular [size]="16" [name]="icons" class="my-icon"></lucide-angular>
+          </button>
+        </div>
+      </div>
+    </form>
+    <!-- <h1>akjaskdsabasjdk</h1> -->
+
+      <div class="container" *ngIf="isDataAvailable">
+        <div class="background">
+          <div class="Circle1"></div>
+          <div class="Circle2"></div>
+          <div class="Circle3"></div>
+          <div class="content">
+            <h1 class="Condition">
+              <!-- <img class="img" src="https://openweathermap.org/img/wn/{{
+              wData?.weather[0]?.icon
+            }}@4x.png" alt=""/> -->
+             {{ wData?.weather[0]?.description }}</h1>
+            <h1 class="Temp">{{
+              wData?.main?.temp
+                ? convertKelvinToCelsius(wData.main.temp) + "°"
+                : ""
+            }}C</h1>
+            <h1 class="Time">{{LocalDate}} </h1>
+            <h1 class="Location" *ngIf="cityName">
+              <!-- <i class="material-icons locationIcon">place</i> -->
+               {{ cityName | uppercase }}, {{ countryName }}</h1>
+          </div>
+        </div>
+
+      <!-- <div class="weatherIcon">
+        <img class="img" src="https://openweathermap.org/img/wn/{{
+          wData?.weather[0]?.icon
+        }}@4x.png" alt="" />
+      </div>
+
+      <div class="weatherInfo">
+        <div class="temp temperature">
+          {{
+            wData?.main?.temp
+              ? convertKelvinToCelsius(wData.main.temp) + "°"
+              : ""
+          }}C
+        </div>
+
+        <div class="description">
+          <div class="weatherCondition">
+
+            <p class="weather">{{ wData?.weather[0]?.description }}</p>
+          </div>
+          <div class="place city" *ngIf="cityName">
+            {{ cityName | uppercase }}, {{ countryName }}
+          </div>
+        </div>
+      </div> -->
+
+
+    <div class="modal" *ngIf="showModel" [ngClass]="showModel ? 'show' : ''">
+      <div class="modal-content">
+        {{ " opps! data not available for " + modelCityName }}
+      </div>
+    </div>
+
+  </div>
+</div>
