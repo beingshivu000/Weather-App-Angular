@@ -46,7 +46,6 @@ export class Weatherdata implements OnInit {
   onSubmit(form: FormGroup) {
     this.sendCityName(form.value.cityName);
     this.modelCityName = form.value.cityName;
-    this.myForm.reset();
   }
 
   sendCityName(cityName: string) {
